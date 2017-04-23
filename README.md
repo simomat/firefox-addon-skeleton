@@ -35,8 +35,8 @@ Note: for `npm sign`, WEB_EXT_API_KEY and WEB_EXT_API_SECRET environment variabl
  * [babel](https://github.com/babel/babel) to run tests on ES6 modules
 
 
-##### Not yet included
-Some features an add-on may also have but which are not included in the sceleton yet:
+#### Not yet included
+Some features an add-on may also have but which are not included in the skeleton yet:
  
  * internationalization
  * devtools page
