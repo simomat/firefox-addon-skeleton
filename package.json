@@ -1,0 +1,34 @@
+{
+  "name": "firefox-addon-skeleton",
+  "description": "Skeleton for a Firefox addon",
+  "version": "1.0.0",
+  "license": "MPL",
+  "author": "Matthias Simon",
+  "homepage": "https://github.com/simomat/firefox-addon-skeleton#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firefox-addon-skeleton/lowcarb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simomat/firefox-addon-skeleton/issues"
+  },
+  "scripts": {
+    "build": "gulp",
+    "clean": "gulp clean",
+    "test": "mocha --compilers js:babel-core/register",
+    "start": "web-ext run -s dist/ --start-url about:debugging --start-url about:addons --verbose",
+    "lint": "web-ext lint -s dist/",
+    "pack": "web-ext build -s dist/",
+    "sign": "web-ext sign -s dist/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "mocha": "^3.2.0",
+    "rollup-stream": "^1.19.0",
+    "vinyl-source-stream": "^1.1.0",
+    "web-ext": "^1.9.0"
+  }
+}
