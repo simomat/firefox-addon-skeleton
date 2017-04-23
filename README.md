@@ -2,7 +2,7 @@
 
 A skeleton for Firefox add-on development. Usable for developing add-ons based on [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) API.
 
-[![devDependency Status](https://david-dm.org/simomat/firefox-addon-skeleton.svg)](https://david-dm.org/mozilla/web-ext#info=devDependencies)
+[![devDependency Status](https://david-dm.org/simomat/firefox-addon-skeleton.svg)](https://david-dm.org/simomat/firefox-addon-skeleton#info=devDependencies)
 
 It provides
  * package structure, `manifest.json` template
