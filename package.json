@@ -7,7 +7,7 @@
   "homepage": "https://github.com/simomat/firefox-addon-skeleton#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/firefox-addon-skeleton/lowcarb.git"
+    "url": "git+https://github.com/simomat/firefox-addon-skeleton.git"
   },
   "bugs": {
     "url": "https://github.com/simomat/firefox-addon-skeleton/issues"
