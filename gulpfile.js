@@ -8,11 +8,11 @@ const dist = './dist';
 gulp.task('default', ['build']);
 
 gulp.task('clean', function () {
-    return del([dist + '/**/*',  dist + '/.*', './web-ext-artifacts/']);
+    return del([`${dist}/**/*`,  `${dist}/.*`, './web-ext-artifacts/']);
 });
 
-gulp.task("copyStaticFiles", function () {
-    return gulp.src('./extension/**')
+gulp.task('copyStaticContent', function () {
+    return gulp.src('./static/**')
         .pipe(gulp.dest("./dist"));
 });
 
@@ -33,7 +33,7 @@ gulp.task('buildOptions', function () {
         exports: 'none'
     })
         .pipe(source('options.js'))
-        .pipe(gulp.dest(dist + '/options'));
+        .pipe(gulp.dest(`${dist}/options`));
 });
 
 gulp.task('buildAction', function () {
@@ -43,7 +43,7 @@ gulp.task('buildAction', function () {
         exports: 'none'
     })
         .pipe(source('action.js'))
-        .pipe(gulp.dest(dist + '/action'));
-})
+        .pipe(gulp.dest(`${dist}/action`));
+});
 
-gulp.task('build', ['copyStaticFiles', 'buildBackground', 'buildOptions', 'buildAction']);
+gulp.task('build', ['copyStaticContent', 'buildBackground', 'buildOptions', 'buildAction']);
