@@ -25,7 +25,7 @@ $ npm run pack    # packs the add-on as a .zip into ./web-ext-artifacts
 $ npm run sign    # performs signing, builds .xpi into ./web-ext-artifacts on success
 ```
 
-Note: for `npm sign`, WEB_EXT_API_KEY and WEB_EXT_API_SECRET environment variables need to be set. See [web-ext](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/web-ext_command_reference#web-ext_sign) docs.
+Note: for `npm run sign`, WEB_EXT_API_KEY and WEB_EXT_API_SECRET environment variables need to be set. See [web-ext](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/web-ext_command_reference#web-ext_sign) docs.
  
  
 ### Tech base
