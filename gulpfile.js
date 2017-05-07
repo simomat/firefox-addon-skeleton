@@ -5,45 +5,33 @@ const del = require('del');
 
 const dist = './dist';
 
+const scripts = [
+    {taskName: 'buildBackground', entry: './src/background.js', source: 'background.js', dest: dist},
+    {taskName: 'buildAction', entry: './src/action/action.js', source: 'action.js', dest: `${dist}/action`},
+    {taskName: 'buildOptions', entry: './src/options/options.js', source: 'options.js', dest: `${dist}/options`}
+];
+
 gulp.task('default', ['build']);
 
-gulp.task('clean', function () {
-    return del([`${dist}/**/*`,  `${dist}/.*`, './web-ext-artifacts/']);
-});
+gulp.task('clean', () =>
+    del([`${dist}/**/*`, `${dist}/.*`, './web-ext-artifacts/']));
 
-gulp.task('copyStaticContent', function () {
-    return gulp.src('./static/**')
-        .pipe(gulp.dest("./dist"));
-});
+gulp.task('copyStaticContent', () =>
+    gulp.src('./static/**')
+    .pipe(gulp.dest("./dist")));
 
-gulp.task('buildBackground', function () {
-    return rollup({
-        entry: './src/background.js',
-        format: 'es',
-        exports: 'none'
-    })
-        .pipe(source('background.js'))
-        .pipe(gulp.dest(dist));
-});
+let rollupCache;
 
-gulp.task('buildOptions', function () {
-    return rollup({
-        entry: './src/options/options.js',
-        format: 'es',
-        exports: 'none'
-    })
-        .pipe(source('options.js'))
-        .pipe(gulp.dest(`${dist}/options`));
-});
+scripts.forEach(script =>
+    gulp.task(script.taskName, () =>
+        rollup({
+            entry: script.entry,
+            format: 'es',
+            exports: 'none',
+            cache: rollupCache
+        })
+        .on('unifiedcache', unifiedCache => rollupCache = unifiedCache)
+        .pipe(source(script.source))
+        .pipe(gulp.dest(script.dest))));
 
-gulp.task('buildAction', function () {
-    return rollup({
-        entry: './src/action/action.js',
-        format: 'es',
-        exports: 'none'
-    })
-        .pipe(source('action.js'))
-        .pipe(gulp.dest(`${dist}/action`));
-});
-
-gulp.task('build', ['copyStaticContent', 'buildBackground', 'buildOptions', 'buildAction']);
+gulp.task('build', ['copyStaticContent'].concat(scripts.map(script => script.taskName)));
