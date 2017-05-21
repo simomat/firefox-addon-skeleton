@@ -31,7 +31,7 @@ Note: for `npm run sign`, WEB_EXT_API_KEY and WEB_EXT_API_SECRET environment var
 ### Tech base
 
  * [web-ext](https://github.com/mozilla/web-ext) for all add-on relate stuff
- * [grunt](https://github.com/gruntjs/grunt) as build system
+ * [gulp](https://github.com/gulpjs/gulp) as build system
  * [rollup](https://github.com/rollup/rollup) to bundle ES6 modules
  * [mocha](https://github.com/mochajs/mocha) as test runner
  * [babel](https://github.com/babel/babel) to run tests on ES6 modules
