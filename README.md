@@ -7,6 +7,7 @@ A skeleton for developing Firefox add-ons based on [WebExtensions](https://devel
 It provides
  * package structure, `manifest.json` template
  * ability to write JavaScript in ES6 modules, which are bundled on build
+ * ability to import and bundle 3rd party code from npm packages
  * running JavaScript tests
  * easy build, run, pack, sign through `npm run`
  * dependencies for doing all that
@@ -32,7 +33,7 @@ Note: for `npm run sign`, WEB_EXT_API_KEY and WEB_EXT_API_SECRET environment var
 
  * [web-ext](https://github.com/mozilla/web-ext) for all add-on relate stuff
  * [gulp](https://github.com/gulpjs/gulp) as build system
- * [rollup](https://github.com/rollup/rollup) to bundle ES6 modules
+ * [rollup](https://github.com/rollup/rollup) to bundle ES6 modules and code from 3rd party npm packages
  * [mocha](https://github.com/mochajs/mocha) as test runner
  * [babel](https://github.com/babel/babel) to run tests on ES6 modules
 
