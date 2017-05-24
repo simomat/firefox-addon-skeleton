@@ -21,12 +21,16 @@
     "pack": "web-ext build -s dist/",
     "sign": "web-ext sign -s dist/"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rot-13": "^1.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "gulp": "^3.9.1",
     "mocha": "^3.3.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-stream": "^1.19.0",
     "vinyl-source-stream": "^1.1.0",
     "web-ext": "^1.9.1"
