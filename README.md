@@ -1,3 +1,8 @@
+# DEPRECATED
+
+Dependencies are out of date and I would suggest [cookiecutter-web-extension-webpack
+](https://github.com/olivier-m/cookiecutter-web-extension-webpack/) instead.
+
 # firefox-addon-skeleton
 
 A skeleton for developing Firefox add-ons based on [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) API.
